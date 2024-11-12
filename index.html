@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Vendor Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Milk Vendor Dashboard</h1>
+
+    <section class="form-section">
+        <h2>Add/Edit Client Order</h2>
+        <form id="orderForm">
+            <input type="text" id="clientName" placeholder="Client Name" required>
+            <input type="text" id="milkType" placeholder="Type of Milk" required>
+            <input type="number" id="quantity" placeholder="Quantity (liters)" step="0.1" min="0.1" required Ltr>
+            <input type="number" id="price" placeholder="Price" required>
+            <button type="submit" id="addOrderButton">Add Order</button>
+            <button type="button" id="updateOrderButton" style="display: none;">Update Order</button>
+        </form>
+    </section>
+
+    <section class="orders-section">
+        <h2>Orders List</h2>
+        <button id="downloadCSVButton">Download Orders as CSV</button>
+        <button id="downloadPDFButton">Download Orders as PDF</button>
+        <table id="ordersTable">
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>Milk Type</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Orders will be listed here dynamically -->
+            </tbody>
+        </table>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
